@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hello JS</title>
+    <style>
+      .circle {
+        border-radius: 50%;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>JS Actions</h1>
+    <form id="frm1" action="">
+      <label id="namelbl" for="name">Give the ball a basic color!</label>
+      <input type="text" id="name" name="name">
+    </form>
+    <button type="button" onclick="func()" style="display: block;">Submit</button>
+
+    <h1>Click the ball!</h1>
+    <div style="margin-top: 10px; height:150px; width: 300px; background-color: #bbbbbb; padding: 5px;">
+      <div id="target" class="circle" onclick="moveBall()"></div>
+    </div>
+    <h3>You've clicked the ball <span id="scoreCount">0</span> times!</h3>
+
+    <script>
+      // Switch text to checkbox
+      function func() {
+        document.getElementById("target").style.backgroundColor = document.getElementById("name").value;
+      }
+
+      function moveBall() {
+        var score = parseInt(document.getElementById("scoreCount").innerHTML);
+        var ball = document.getElementById("target");
+        ball.style.left = getRandomInt(250) + "px";
+        ball.style.top = getRandomInt(100) + "px";
+        score++;
+        document.getElementById("scoreCount").innerHTML = score;
+      }
+
+      function getRandomInt(max) {
+       return Math.floor(Math.random() * max);
+      }
+    </script>
+  </body>
+</html>
