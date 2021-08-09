@@ -15,13 +15,26 @@ let matryoshka = {
     }
 };
 
-function getNames(obj) {
-    if(!obj.hasOwnProperty('content')) {
+
+console.log()
+
+// function getNames (obj) { 
+//     if (!obj.hasOwnProperty('content')) { 
+//         console.log(obj.name); 
+//     } else { 
+//         console.log(obj.name); 
+//         getNames(obj.content); 
+//     } 
+// }
+
+const getNames = obj => {
+    if(!obj.hasOwnProperty("content")) {
         console.log(obj.name);
     } else {
         console.log(obj.name);
         getNames(obj.content);
     }
 }
+
 
 getNames(matryoshka);

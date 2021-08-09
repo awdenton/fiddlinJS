@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concentration</title>
+
+    <style>
+        body {
+            background-color: #35654d;
+            text-align: center;            
+        }
+
+        h1 {
+            color: rgb(211, 157, 22);
+        }
+
+        .card {
+            display: inline-block;
+            width: 106px;
+            height: 150px;
+            margin: 10px 5px;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+
+        .card-front {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            background-color: #ffffff;
+            transform: rotateY(180deg);            
+        }
+
+        .card-back {
+            background-image: url("images/card_back.png");
+            background-size: cover;
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }
+
+        .frozen {
+            background-color: blue;
+        }
+
+        #game-board {
+            border: 10px ridge rgb(211, 157, 22);
+            width: 66%;
+            margin: auto;
+            perspective: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <template id="card-template">
+        <div class="card" onclick="flip(this)">
+            <div class="card-front"></div>
+            <div class="card-back"></div>
+        </div>
+    </template>
+
+    <h1>Concentration</h1>
+
+    <div id="game-board">
+    </div>
+
+    <h1 id="score-field">0</h1>
+
+    <script src="concentration.js"></script>
+</body>
+
+</html>
