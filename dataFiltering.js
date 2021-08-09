@@ -3,36 +3,39 @@ let matryoshka = {
     eyeColor: "Blue",
     hairColor: "Black",
     content: {
-        name: "Danielle",
-        eyeColor: "Hazel",
-        hobbies: ["Visiting petting zoos", "Whaling", "QAnon"],
-        hairColor: "Blonde",
+        name: "Ren",
+        eyeColor: "Blue",
+        hairColor: "Black",
         content: {
-            name: "Esmerelda",
-            hairColor: "Brown",
-            eyeColor: "Brown"
+            name: "Stimpy",
+            eyeColor: "Blue",
+            hairColor: "Black",
+            content: {
+                name: "Danielle",
+                eyeColor: "Hazel",
+                hobbies: ["Visiting petting zoos", "Whaling", "QAnon"],
+                hairColor: "Blonde",
+                content: {
+                    name: "Esmerelda",
+                    hairColor: "Brown",
+                    eyeColor: "Brown"
+                }
+            }
         }
     }
 };
 
-
-console.log()
-
-// function getNames (obj) { 
-//     if (!obj.hasOwnProperty('content')) { 
-//         console.log(obj.name); 
-//     } else { 
-//         console.log(obj.name); 
-//         getNames(obj.content); 
-//     } 
+// function getNames(obj) {
+//     console.log(obj.name);
+//     if(obj.hasOwnProperty('content')) {
+//         getNames(obj.content);
+//     }
 // }
 
-const getNames = obj => {
-    if(!obj.hasOwnProperty("content")) {
-        console.log(obj.name);
-    } else {
-        console.log(obj.name);
-        getNames(obj.content);
+const getNames = doll => {
+    console.log(doll.name);
+    if(doll.hasOwnProperty('content')) {
+        getNames(doll.content);
     }
 }
 
